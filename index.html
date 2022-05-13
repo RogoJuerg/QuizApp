@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -30,17 +30,20 @@
 
     <div class="container">
         <div class="card quiz-card">
-            <img src="./img/education-6305113_1920.jpg" class="card-img-top">
+            <img id="header-image" src="./img/education-6305113_1920.jpg" class="card-img-top">
+
+            <div class="progress">
+                <div class="progress-bar" id="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0"
+                    aria-valuemax="100">0%</div>
+            </div>
 
             <div class="card-body" id="endScreen" style="display: none;">
                 <div class="text-center">
                     Quiz Beendet!
                 </div>
-                <div>
-                    <img class="width-100" src="./img/trophy.png">
-                </div>
                 <div class="text-center">
-                    Du hast <b id="amount-of-right-questions">XXX</b> Fragen von <b id="amount-of-questions">XXX</b> beantwortet
+                    Du hast <b id="amount-of-right-questions">XXX</b> Fragen von <b id="amount-of-questions">XXX</b>
+                    beantwortet
                 </div>
             </div>
 
@@ -76,7 +79,8 @@
                         <b id="quetion-number">1</b> von <b id="all-questions">5</b> Fragen
                     </span>
 
-                    <button onclick="nextQuestion()" class="btn btn-primary" disabled id="next-button">Nächste Frage</button>
+                    <button onclick="nextQuestion()" class="btn btn-primary" disabled id="next-button">Nächste
+                        Frage</button>
                 </div>
 
 

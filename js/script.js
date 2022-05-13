@@ -39,14 +39,20 @@ function init() {
 
 function showQuestion() {
 
-    if (currentQuestion >= questions.length) {
+
+    if  (currentQuestion >= questions.length) {
+        // Show End Screen
         document.getElementById('endScreen').style = '';
         document.getElementById('questionBody').style = 'display: none;';
 
         document.getElementById('amount-of-questions').innerHTML = questions.length;
-
         document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
-    } else {
+        document.getElementById('header-image').src = './img/trophy.png';
+    } else { // Show Question
+
+        let percent = Math.round(((currentQuestion + 1) / questions.length) * 100);
+        document.getElementById('progress-bar').innerHTML = `${percent}%`;
+        document.getElementById('progress-bar').style.width = `${percent}%`;
 
         let question = questions[currentQuestion];
 
@@ -88,7 +94,6 @@ function nextQuestion() {
 
 function resetAnswerQuestion() {
     for (let i = 1; i <= 4; i++) {
-        console.log('answer_' + i)
         document.getElementById('answer_' + i).parentNode.classList.remove('bg-danger');
         document.getElementById('answer_' + i).parentNode.classList.remove('bg-success');
     }
